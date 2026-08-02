@@ -1,0 +1,14 @@
+# Core application dependencies for running the Streamlit app
+#
+# IMPORTANT: langchain 1.0 (released later in 2024) completely restructured
+# how agents work - AgentExecutor and create_tool_calling_agent (used in
+# agent.py) were removed in favor of a new create_agent API. This project
+# uses the pre-1.0 agent API, so langchain/langchain-core are pinned below
+# 1.0 on purpose. Do NOT change these to "langchain" / "langchain>=0.2.14"
+# with no upper bound - that will silently install the incompatible 1.x
+# release and break agent.py with an ImportError.
+streamlit>=1.37.0
+langchain>=0.3.0,<0.4.0
+langchain-groq>=0.2.0,<0.3.0
+langchain-core>=0.3.0,<0.4.0
+python-dotenv>=1.0.1
